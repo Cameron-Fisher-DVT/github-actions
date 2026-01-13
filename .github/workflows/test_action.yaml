@@ -8,5 +8,5 @@ jobs:
   echo:
     runs-on: ubuntu-latest
     steps:
-      -name: Test Action
+      - name: Test Action
       run: echo "I triggered test"
