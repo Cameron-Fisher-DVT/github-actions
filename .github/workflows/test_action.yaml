@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test Action
-      run: echo "I triggered test"
+        run: echo "I triggered test"
