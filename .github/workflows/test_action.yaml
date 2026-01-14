@@ -3,8 +3,7 @@ name: "Test Action"
 on: 
   pull_request:
     types:
-      - opened
-      - synchronized
+      - closed
     branches:
       main
 
