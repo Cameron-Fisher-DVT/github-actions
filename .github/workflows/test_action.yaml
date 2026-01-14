@@ -1,10 +1,17 @@
 name: "Test Action"
 
-on: workflow_dispatch
+on: 
+  pull_request:
+    types:
+      - opened
+      - synchronized
+    branches:
+      main
+
 
 jobs:
   echo:
     runs-on: ubuntu-latest
     steps:
       - name: Test Action
-        run: echo "I triggered test"
+        run: echo "Running whenever a PR is opened or synchronized and base branch is main"
