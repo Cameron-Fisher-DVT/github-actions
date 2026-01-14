@@ -29,4 +29,6 @@ jobs:
         if: ${{inputs.debug}}
         run: | 
           echo "My workflow var: ${{env.MY_WORKFLOW_VAR}}"
-          echo "My job var: ${{vars.MY_JOB_VAR}}"
+          echo "My job var: ${{env.MY_JOB_VAR}}"
+      - name: Greeting
+        run: echo "Hello world"
