@@ -1,6 +1,9 @@
 name: "Test Action"
 run-name: Context | DEBUG - ${{inputs.debug}}
 
+env: 
+  MY_WORKFLOW_VAR: "workflow"
+
 on: 
   push:
   workflow_dispatch:
@@ -13,6 +16,8 @@ on:
 jobs:
   echo-data:
     runs-on: ubuntu-latest
+    env:  
+      MY_JOB_VAR: "job"
     steps:
       - name: Test Action
         run: |
@@ -20,3 +25,7 @@ jobs:
           echo "Ref: ${{github.ref}}"
           echo "SHA: ${{github.sha}}"
           echo "Actor: ${{github.actor}}"
+      - name: Retrieve variables
+        run: | 
+          echo "My workflow var: ${{env.MY_WORKFLOW_VAR}}"
+          echo "My job var: ${{env.MY_JOB_VAR}}"
